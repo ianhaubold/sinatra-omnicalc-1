@@ -1,33 +1,32 @@
 <h1>Payment Results<h1>
-<%=param%>
 
 <dl>
   <dt>
     APR
   </dt>
   <dd>
-    <%= @apr %>
+    <%= @apr.to_fs(:percentage, {:precision => 4}) %>
   </dd>
 
   <dt>
     Number of years
   </dt>
   <dd>
-    <%= @periods*12 %>
+    <%= @periods/12 %>
   </dd>
 
   <dt>
     Principal
   </dt>
   <dd>
-    <%= @principal %>
+    <%= @principal.to_fs(:currency) %>
   </dd>
 
   <dt>
     Payment
   </dt>
   <dd>
-    <%= @result3 %>
+    <%= @the_result3.to_fs(:currency) %>
   </dd>
 </dl>
 
